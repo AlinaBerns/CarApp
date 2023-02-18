@@ -109,9 +109,15 @@ public class CarApp {
 
         String LicensePlateCar_5 = car5.generateLicensePlate();
 
+        System.out.println("BONUS_EN_BONUS++\n");
+
+        String LicensePlateCar_1 = car1.generateLicensePlate();
+
+
+
         //TEST!!! CAR 5
 
-        /*
+
 
         System.out.println("Voer het nummer van de auto in om de informatie te krijgen: ");
         int carNum_end = myScanner.nextInt();
@@ -135,7 +141,7 @@ public class CarApp {
             System.out.println("geen auto");
         }
 
-        */
+
 
         }
     }

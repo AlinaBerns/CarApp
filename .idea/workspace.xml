@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="546b8b2b-3382-4099-9436-b412f245ae0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/be/intecbrussel/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/intecbrussel/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/intecbrussel/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/intecbrussel/CarApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/intecbrussel/CarApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
