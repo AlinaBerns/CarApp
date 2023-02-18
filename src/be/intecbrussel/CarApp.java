@@ -115,11 +115,11 @@ public class CarApp {
 
 
 
-        //TEST!!! CAR 5
+        //TEST!!! CAR 5, CAR 1
 
 
 
-        System.out.println("Voer het nummer van de auto in om de informatie te krijgen: ");
+        /*System.out.println("Voer het nummer van de auto in om de informatie te krijgen: ");
         int carNum_end = myScanner.nextInt();
 
         if (carNum_end == 1) {
@@ -141,7 +141,7 @@ public class CarApp {
             System.out.println("geen auto");
         }
 
-
+        */
 
         }
     }
