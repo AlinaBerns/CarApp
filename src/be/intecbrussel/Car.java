@@ -1,9 +1,8 @@
 package be.intecbrussel;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
-import java.util.Scanner;
+import java.sql.Driver;
+import java.util.*;
+
 public class Car {
 
     protected int maxSnelheid, huidigeSnelheid, paadenkrachtis, max_rijden, motor;
@@ -14,9 +13,14 @@ public class Car {
 
     protected static int carCount;
 
+
     String name;
 
     String state;
+
+    String driver;
+
+    String licensePlate;
 
     {
         maxSnelheid = 120;
@@ -26,14 +30,16 @@ public class Car {
         kleur = "wit";
         random = new Random().ints(1, 100, 200).boxed().toList();
         state = "is onbekend";
+        driver = "unknown";
+        licensePlate = "niet ingesteld";
     }
 
     @Override
-    public String toString(){
+    public String toString() {
 
-        return "max snelheid: "+ this.maxSnelheid+"\n"+"paardenkrachtis: "+this.paadenkrachtis+"\n"+"max rijden: "+this.max_rijden+"\n"+"motor: "+this.motor+"\n"+"kleur: "+this.kleur+ "\n"+ "lichten: "+this.state;
+        return "License Plate: "+ this.licensePlate+"\n"+"max snelheid: " + this.maxSnelheid + "\n" + "paardenkrachtis: " + this.paadenkrachtis + "\n" + "max rijden: " + this.max_rijden + "\n" + "motor: " + this.motor + "\n" + "kleur: " + this.kleur + "\n" + "lichten: " + this.state+"\n"+"bestuurder: "+this.driver;
 
-            }
+    }
 
     Car() {
         carCount++;
@@ -58,7 +64,7 @@ public class Car {
         this.kleur = kleur;
     }
 
-    Car (String name, String state){
+    Car(String name, String state) {
         this();
         this.name = name;
         this.state = state;
@@ -103,23 +109,55 @@ public class Car {
         return carCount;
     }
 
-    String toggleLights (){
-        if (Objects.equals(this.state, "de lichten uit staan")){
+    String toggleLights() {
+        if (Objects.equals(this.state, "de lichten uit staan")) {
             state = "de lichten aan staan";
             System.out.println(state);
 
-        }else if (Objects.equals(this.state, "de lichten aan staan")){
-            state="de lichten uit staan";
+        } else if (Objects.equals(this.state, "de lichten aan staan")) {
+            state = "de lichten uit staan";
             System.out.println(state);
-        }else {
-            state="fout";
+        } else {
+            state = "fout";
         }
 
         return state;
     }
 
-    }
+    String assignDriver() {
+        name = this.name;
 
+
+        do {
+            System.out.println("Voer de naam van de bestuurder in: ");
+            Scanner scanner = new Scanner(System.in);
+            this.name = " ";
+            this.name = scanner.next();
+
+            if (this.name.length() >= 5 && !this.name.contains(" ")) {
+
+                driver = this.name;
+                System.out.println("Naam bestuurder: "+this.name);
+
+            } else {
+                System.out.println("Niet toegestaan!");
+            }
+        }while (this.name.length() < 5 || this.name.contains(" ")) ;
+
+        return this.name;
+    }
+    String generateLicensePlate() {
+        int n = 3;
+
+        String truncated = String.format("%."+n+"s",driver);
+        String lp = truncated.toUpperCase(Locale.ROOT);
+        this.licensePlate = lp+"-"+random.toString();
+
+        System.out.println(this.licensePlate);
+
+        return this.licensePlate;
+    }
+    }
 
 
 
